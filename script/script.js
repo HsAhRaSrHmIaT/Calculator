@@ -13,6 +13,7 @@ function onclickNum(num) {
     updateFixedDisplay();
 }
 
+let operatorEntered = false;
 function onclickOperator(operator) {
     if (currentDisplay.endsWith('+') || currentDisplay.endsWith('-') || currentDisplay.endsWith('*') || currentDisplay.endsWith('/') || currentDisplay.endsWith('%')
         || currentDisplay.endsWith('.')) {
@@ -20,9 +21,10 @@ function onclickOperator(operator) {
     }
     updateFixedDisplay();
     currentDisplay = currentDisplay + operator;
+    operatorEntered = true;
     document.querySelector("#fixed-display").value = currentDisplay;
     //currentDisplay = num;
-    //document.querySelector("#display").value = num;
+    document.querySelector("#display").value = currentDisplay;
     truncateDigits(document.querySelector("#fixed-display"));
 }
 
@@ -38,7 +40,8 @@ function eraseLastDigit() {
     } else {
         currentDisplay = "0";
     }
-    document.querySelector("#display").value = currentDisplay;
+    document.querySelector("#display").value = currentDisplay
+    document.querySelector("#fixed-display").value = currentDisplay;
 }
 
 function evaluateExpression() {

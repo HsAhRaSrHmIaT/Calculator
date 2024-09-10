@@ -64,11 +64,17 @@
 .calc-button.operator:hover {
     background-color: rgb(60, 60, 60);
 }
+.calc-button.operator:active {
+    background-color: rgb(50, 50, 50);
+}
 #equal:hover {
     background-color: rgb(7, 149, 19);
 }
 .calc-button:hover {
     background-color: rgb(50, 50, 50);
+}
+.calc-button:active {
+    background-color: rgb(40, 40, 40);
 }
 #fixed-display {
     color: rgb(161, 161, 161);

@@ -23,7 +23,7 @@
                         <button class="calc-button operator" onclick="onclickOperator('/')">÷</button>
                     </div>
                     <div class="button">
-                        <button class="calc-button" onclick="onclickNum('7')">7</button>
+                        <button class="calc-button" onclick="onclickNum('7');">7</button>
                         <button class="calc-button" onclick="onclickNum('8')">8</button>
                         <button class="calc-button" onclick="onclickNum('9')">9</button>
                         <button class="calc-button operator" onclick="onclickOperator('*')">×</button>
@@ -47,7 +47,8 @@
                         } else {
                             currentDisplay = '-' + currentDisplay;
                         }
-                        document.querySelector('#display').value = currentDisplay;">+/-</button>
+                        document.querySelector('#display').value = currentDisplay;
+                        document.querySelector('#fixed-display').value = currentDisplay;">+/-</button>
                         <button class="calc-button" onclick="onclickNum('0')">0</button>
                         <button class="calc-button" onclick="onclickOperator('.')">.</button>
                         <button class="calc-button" id="equal" onclick="evaluateExpression()">=</button>

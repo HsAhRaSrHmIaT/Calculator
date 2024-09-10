@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My calculator</title>
+       <link rel="stylesheet" type="text/css" href="calculator.css">
+    </head>
+    <body>
+        <div class="calculator">
+            <h1>My Calculator</h1>
+            <div class="container">
+                <div class="display">
+                    <div class="display">
+                        <input type="text" id="fixed-display" readonly oninput="truncateDigits(this); updateFixedDisplay();" maxlength="15">
+                        <input type="text" id="display" readonly disabled oninput="truncateDigits(this)" maxlength="9">
+                    </div>
+                    <div class="button">
+                        <button class="calc-button operator" onclick="onclickOperator('%')">%</button>
+                        <button class="calc-button operator" onclick="
+                        currentDisplay = '0';
+                        document.querySelector('#display').value = currentDisplay;
+                        clearDisplay();">C</button>
+                        <button class="calc-button operator" onclick="eraseLastDigit()">&#x232B</button>
+                        <button class="calc-button operator" onclick="onclickOperator('/')">÷</button>
+                    </div>
+                    <div class="button">
+                        <button class="calc-button" onclick="onclickNum('7')">7</button>
+                        <button class="calc-button" onclick="onclickNum('8')">8</button>
+                        <button class="calc-button" onclick="onclickNum('9')">9</button>
+                        <button class="calc-button operator" onclick="onclickOperator('*')">×</button>
+                    </div>
+                    <div class="button">
+                        <button class="calc-button" onclick="onclickNum('4')">4</button>
+                        <button class="calc-button" onclick="onclickNum('5')">5</button>
+                        <button class="calc-button" onclick="onclickNum('6')">6</button>
+                        <button class="calc-button operator" onclick="onclickOperator('-')">-</button>
+                    </div>
+                    <div class="button">
+                        <button class="calc-button" onclick="onclickNum('1')">1</button>
+                        <button class="calc-button" onclick="onclickNum('2')">2</button>
+                        <button class="calc-button" onclick="onclickNum('3')">3</button>
+                        <button class="calc-button operator" onclick="onclickOperator('+')">+</button>
+                    </div>
+                    <div class="button">
+                        <button class="calc-button" onclick="
+                        if (currentDisplay.startsWith('-')) {
+                            currentDisplay = currentDisplay.slice(1);
+                        } else {
+                            currentDisplay = '-' + currentDisplay;
+                        }
+                        document.querySelector('#display').value = currentDisplay;">+/-</button>
+                        <button class="calc-button" onclick="onclickNum('0')">0</button>
+                        <button class="calc-button" onclick="onclickOperator('.')">.</button>
+                        <button class="calc-button" id="equal" onclick="evaluateExpression()">=</button>
+                    </div>
+                </div>     
+        </div>
+            <script src="script/script.js"></script>
+    </body>
+</html>

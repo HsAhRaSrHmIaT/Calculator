@@ -70,6 +70,10 @@
 #equal:hover {
     background-color: rgb(7, 149, 19);
 }
+#equal:active {
+    background-color: rgb(34, 209, 60);
+    color: rgb(60, 60, 60);
+}
 .calc-button:hover {
     background-color: rgb(50, 50, 50);
 }
@@ -89,8 +93,4 @@
 html {
     background-color: rgb(32, 32, 32);
     text-align: center;
-}
-
-.calculator {
-    
 }

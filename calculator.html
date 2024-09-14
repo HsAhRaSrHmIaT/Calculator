@@ -11,7 +11,7 @@
                 <div class="display">
                     <div class="display">
                         <input type="text" id="fixed-display" readonly oninput="truncateDigits(this); updateFixedDisplay();" maxlength="15">
-                        <input type="text" id="display" readonly disabled oninput="truncateDigits(this)" maxlength="9">
+                        <input type="text" id="display" readonly disabled oninput="truncateDigits(this); updateDisplay();" maxlength="9">
                     </div>
                     <div class="button">
                         <button class="calc-button operator" onclick="onclickOperator('%')">%</button>

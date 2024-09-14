@@ -1,6 +1,5 @@
 let currentDisplay = "0";
 let fixedDisplay = "";
-//document.querySelector("#fixed-display").value = currentDisplay;
 
 function onclickNum(num) {
     if (currentDisplay == "0" || currentDisplay.startsWith('-0')) {
@@ -13,7 +12,6 @@ function onclickNum(num) {
     updateFixedDisplay();
 }
 
-let operatorEntered = false;
 function onclickOperator(operator) {
     if (currentDisplay.endsWith('+') || currentDisplay.endsWith('-') || currentDisplay.endsWith('*') || currentDisplay.endsWith('/') || currentDisplay.endsWith('%')
         || currentDisplay.endsWith('.')) {
@@ -21,9 +19,7 @@ function onclickOperator(operator) {
     }
     updateFixedDisplay();
     currentDisplay = currentDisplay + operator;
-    operatorEntered = true;
     document.querySelector("#fixed-display").value = currentDisplay;
-    //currentDisplay = num;
     document.querySelector("#display").value = currentDisplay;
     truncateDigits(document.querySelector("#fixed-display"));
 }
@@ -57,8 +53,5 @@ function updateFixedDisplay() {
 }
 
 function clearDisplay() {
-    //let currentDisplay = '';
     document.querySelector("#fixed-display").value = '';
-    //updateFixedDisplay();
 }
-

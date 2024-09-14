@@ -1,6 +1,5 @@
 let currentDisplay = "0";
 let fixedDisplay = "";
-//document.querySelector("#fixed-display").value = currentDisplay;
 
 function onclickNum(num) {
     if (currentDisplay == "0" || currentDisplay.startsWith('-0')) {
@@ -57,8 +56,6 @@ function updateFixedDisplay() {
 }
 
 function clearDisplay() {
-    //let currentDisplay = '';
     document.querySelector("#fixed-display").value = '';
-    //updateFixedDisplay();
 }
 

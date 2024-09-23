@@ -19,9 +19,9 @@ function onclickOperator(operator) {
     }
     updateFixedDisplay();
     currentDisplay = currentDisplay + operator;
+    //document.querySelector("#display").value = currentDisplay;
     document.querySelector("#fixed-display").value = currentDisplay;
-    document.querySelector("#display").value = currentDisplay;
-    truncateDigits(document.querySelector("#fixed-display"));
+    truncateDigits(document.querySelector("#display"));
 }
 
 function truncateDigits(input) {
@@ -41,12 +41,17 @@ function eraseLastDigit() {
 }
 
 function evaluateExpression() {
-        let expression = currentDisplay;
-        let result = eval(expression);
-        currentDisplay = result.toString();
-        document.querySelector("#fixed-display").value = expression + " =";
-        document.querySelector("#display").value = currentDisplay;
+    let expression = currentDisplay;
+    if (expression.includes('%')) {
+        expression = expression.replace(/(\d+)%/g, (match, p1) => {
+            return (parseFloat(p1) / 100).toString();
+        });
     }
+    let result = eval(expression);
+    currentDisplay = result.toString();
+    document.querySelector("#fixed-display").value = expression + " =";
+    document.querySelector("#display").value = currentDisplay;
+}
 function updateFixedDisplay() {
     const displayValue = document.querySelector("#display").value;
     document.querySelector("#fixed-display").value= displayValue;

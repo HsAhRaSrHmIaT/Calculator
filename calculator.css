@@ -1,57 +1,66 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
 .container {
-    border:rgb(23, 12, 43) 2px solid;
+    border: rgb(23, 12, 43) 2px solid;
     height: 396px;
     width: 292px;
-    border-radius: 7px;
+    border-radius: 10px;
     border-color: rgb(17, 139, 21);
     margin: 0 auto;
- }
- 
- #display {
-     border:rgb(23, 12, 43) 2px solid;
-     margin: 5px;
-     border-radius: 5px;
-     width: 95%;
-     height: 60px;
-     font-size: 50px;
-     text-align: right;
-     font-family: 'Segoe UI', Courier, monospace;
-     border: none;
-     color: white;
-     background-color: rgb(32, 32, 32);
+}
 
- }
- 
- .button {
-     width: 100%;
-     display: flex;
+#display {
+    border: rgb(23, 12, 43) 2px solid;
+    margin: 5px;
+    border-radius: 5px;
+    width: 95%;
+    height: 60px;
+    font-size: 40px;
+    text-align: right;
+    font-family: 'Segoe UI', Courier, monospace;
+    border: none;
+    color: white;
+    background-color: rgb(32, 32, 32);
+
+}
+
+.button {
+    width: 100%;
+    display: flex;
     justify-content: center;
+}
 
- }
- 
- .calc-button {
-     margin: 1px;
-     height: 55px;
-     width: 70px;
-     align-items: center;
-     border-radius: 5px;
-     font-size: 20px;
-     /* font-weight: bold; */
-     font-family: "Segoe UI", Helvetica, sans-serif;
-     background-color: rgb(60, 60, 60);
-     color: white;
-     border: none;
- }
+.calc-button {
+    margin: 1px;
+    height: 55px;
+    width: 70px;
+    align-items: center;
+    border-radius: 5px;
+    font-size: 20px;
+    /* font-weight: bold; */
+    font-family: "Segoe UI", Helvetica, sans-serif;
+    background-color: rgb(60, 60, 60);
+    color: white;
+    border: none;
+}
 
- h1 {
+h1 {
     color: white;
     font-family: 'Segoe UI', Courier, monospace;
- }
- 
+}
+
 .container {
     align-items: center;
     background-color: rgb(32, 32, 32);
-} 
+}
 
 #equal {
     background-color: rgb(33, 255, 66);
@@ -61,25 +70,32 @@
 .calc-button.operator {
     background-color: rgb(50, 50, 50);
 }
+
 .calc-button.operator:hover {
     background-color: rgb(60, 60, 60);
 }
+
 .calc-button.operator:active {
     background-color: rgb(50, 50, 50);
 }
+
 #equal:hover {
     background-color: rgb(7, 149, 19);
 }
+
 #equal:active {
     background-color: rgb(34, 209, 60);
     color: rgb(60, 60, 60);
 }
+
 .calc-button:hover {
     background-color: rgb(50, 50, 50);
 }
+
 .calc-button:active {
     background-color: rgb(40, 40, 40);
 }
+
 #fixed-display {
     color: rgb(161, 161, 161);
     font-size: 15px;
@@ -90,7 +106,66 @@
     background-color: rgb(32, 32, 32);
     width: 95%;
 }
+
 html {
     background-color: rgb(32, 32, 32);
     text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        height: 345px;
+        width: 250px;
+        border-radius: 10px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    #display {
+        font-size: 40px;
+        margin: 6px;
+    }
+
+    .calc-button {
+        font-size: 16x;
+    }     
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .calc-button {
+        width: 60px;
+        height: 45px;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .container {
+        height: 320px;
+        width: 215px;
+        border-radius: 10px;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+
+    #display {
+        font-size: 30px;
+        margin: 6px;
+    }
+
+    .calc-button {
+        font-size: 16x;
+    }     
+
+    h1 {
+        font-size: 22px;
+    }
+
+    .calc-button {
+        width: 50px;
+        height: 40px;
+        font-size: 16px;
+    }
 }
